@@ -68,8 +68,6 @@ public class ExercisesPersonal {
                 break;
 
 
-
-
         }
 
     }
