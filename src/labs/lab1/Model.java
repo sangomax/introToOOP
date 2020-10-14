@@ -36,7 +36,7 @@ public class Model {
      * @param weight double with weight in pounds with size between 80 to 280
      * @param canTravel boolean with the option to can travel
      * @param smokes boolean with the option to smoke
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException argument out of range permitted
      */
     public Model(String firstName, String lastName, int height, double weight, boolean canTravel, boolean smokes) throws IllegalArgumentException{
         validationSize(firstName, 3, 20, "First Name");
@@ -64,7 +64,7 @@ public class Model {
     }
 
     /**
-     * returns the first name
+     * Returns the first name
      * @return String with the first name
      */
     public String getFirstName() {
@@ -72,7 +72,7 @@ public class Model {
     }
 
     /**
-     * set the first name
+     * Set the first name
      * @param firstName String with the first name with size between 3 to 20
      */
     public void setFirstName(String firstName) {
@@ -81,7 +81,7 @@ public class Model {
     }
 
     /**
-     * returns the last name
+     * Returns the last name
      * @return String with the last name
      */
     public String getLastName() {
@@ -89,7 +89,7 @@ public class Model {
     }
 
     /**
-     * set the last name
+     * Set the last name
      * @param lastName String with the last name with size between 3 to 20
      */
     public void setLastName(String lastName) {
@@ -97,7 +97,7 @@ public class Model {
     }
 
     /**
-     * returns the height in inches
+     * Returns the height in inches
      * @return int with the height in inches with size between 24 to 84
      */
     public int getHeight() {
@@ -105,7 +105,7 @@ public class Model {
     }
 
     /**
-     * set the height in inches
+     * Set the height in inches
      * @param height int with the height in inches with size between 24 to 84
      */
     public void setHeight(int height) {
@@ -113,7 +113,7 @@ public class Model {
     }
 
     /**
-     * returns the weight in pounds
+     * Returns the weight in pounds
      * @return double with the weight in pounds
      */
     public double getWeight() {
@@ -121,7 +121,7 @@ public class Model {
     }
 
     /**
-     * set the weight in pounds
+     * Set the weight in pounds
      * @param weight double with the weight in pounds with size between 80 to 280
      */
     public void setWeight(double weight) {
@@ -129,7 +129,7 @@ public class Model {
     }
 
     /**
-     * returns the option to can travel
+     * Returns the option to can travel
      * @return boolean with the option to can travel
      */
     public boolean isCanTravel() {
@@ -137,7 +137,7 @@ public class Model {
     }
 
     /**
-     * set the option to can travel
+     * Set the option to can travel
      * @param canTravel boolean with the option to can travel
      */
     public void setCanTravel(boolean canTravel) {
@@ -145,7 +145,7 @@ public class Model {
     }
 
     /**
-     * return the option to smoke
+     * Return the option to smoke
      * @return boolean with the option to smoke
      */
     public boolean isSmokes() {
@@ -153,7 +153,7 @@ public class Model {
     }
 
     /**
-     * set the option to smoke
+     * Set the option to smoke
      * @param smokes boolean with the option to smoke
      */
     public void setSmokes(boolean smokes) {
@@ -161,7 +161,7 @@ public class Model {
     }
 
     /**
-     * returns the full name
+     * Returns the full name
      * @return String with the first name concatenated with the last name
      */
     public String getFullName() {
@@ -169,7 +169,7 @@ public class Model {
     }
 
     /**
-     * return the height formated
+     * Return the height formated
      * @return String with the height formated
      */
     public String getHeightFormated() {
@@ -177,7 +177,7 @@ public class Model {
     }
 
     /**
-     * return the weight formated
+     * Return the weight formated
      * @return String with the weight formated
      */
     public String getWeightFormated() {
@@ -185,7 +185,7 @@ public class Model {
     }
 
     /**
-     * return message with option to travel
+     * Return message with option to travel
      * @return String with message with option to travel
      */
     public String getAnswerTravel() {
@@ -193,7 +193,7 @@ public class Model {
     }
 
     /**
-     * return message with option to smoke
+     * Return message with option to smoke
      * @return String with message with option to smoke
      */
     public String getAnswerSmoke() {
@@ -214,7 +214,7 @@ public class Model {
     }
 
     /**
-     * returns the height in Kg
+     * Returns the height in Kg
      * @return long with the height in Kg
      */
     public long getWeightKg() {
@@ -222,7 +222,7 @@ public class Model {
     }
 
     /**
-     * set the weight in Kg
+     * Set the weight in Kg
      * @param kilograms long with the weight in Kg with size between 37 to 126
      */
     public void setWeight(long kilograms) {
@@ -231,7 +231,7 @@ public class Model {
     }
 
     /**
-     * set the height in feet and inches
+     * Set the height in feet and inches
      * @param feet int with the height part in feet
      * @param inches int with the height part in inches
      */
@@ -253,6 +253,10 @@ public class Model {
         System.out.println();
     }
 
+    /**
+     * Returns the salary per hour
+     * @return int with salary per hour
+     */
     public int calculatePayDollarsPerHour() {
         int salaryHour = BASE_RATE_DOLLARS_PER_HOUR;
 
@@ -269,6 +273,9 @@ public class Model {
         return salaryHour;
     }
 
+    /**
+     * Displays all the model's information
+     */
     public void displayModelDetails() {
         System.out.println("Name: " + getFullName());
         System.out.println("Height: " + getHeightFormated());
