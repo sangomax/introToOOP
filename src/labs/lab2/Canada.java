@@ -1,6 +1,7 @@
 package labs.lab2;
+import static labs.lab2.ConstantsVariables.*;
 
-public class Canada extends ConstantsVariables {
+public class Canada {
 
     private Province[] provinces;
 

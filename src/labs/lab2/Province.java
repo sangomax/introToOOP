@@ -1,8 +1,9 @@
 package labs.lab2;
 
 import java.text.DecimalFormat;
+import static labs.lab2.ConstantsVariables.*;
 
-public class Province extends ConstantsVariables{
+public class Province {
 
     private String name;
     private String capital;
