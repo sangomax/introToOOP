@@ -100,7 +100,7 @@ public class HangmanCities {
         String[] arrayWordToShow = wordToShow.split("\t");
         for(int i = 0; i < arrayWord.length; i++) {
             if(letterGuess.equalsIgnoreCase(String.valueOf(arrayWord[i]))) {
-                arrayWordToShow[i] = i == 0 ? letterGuess.toUpperCase() : letterGuess;
+                arrayWordToShow[i] = String.valueOf(arrayWord[i]);
             }
         }
         wordToShow = "";
