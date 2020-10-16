@@ -18,9 +18,9 @@ public class HangmanCities {
 
         if (flagFirst) {
             System.out.println("Here's the question.");
-            System.out.println(wordGuess.replace(" ", "-").replace("\t"," ").replace("-","\t\t"));
+            System.out.println(wordGuess.replace(" ", "-").replace("\t"," ").replace("-"," "));
         } else {
-            System.out.println("You are guessing: " + wordGuess.replace(" ", "-").replace("\t"," ").replace("-","\t\t"));
+            System.out.println("You are guessing: " + wordGuess.replace(" ", "-").replace("\t"," ").replace("-"," "));
             System.out.print("You have guessed (" + numError + ") wrong letters: ");
             for(char letter: letterWrong) System.out.print(letter + "\t");
             System.out.println();
@@ -41,6 +41,9 @@ public class HangmanCities {
             String letterGuess = scan.nextLine();
             if (!letterGuess.matches("^[a-zA-Z]")) {
                 System.out.println("Invalid character!");
+                continue;
+            } else if(wordToShow.contains(letterGuess) || lettersWrong.contains(letterGuess)) {
+                System.out.println("The letter has already been typed, try another");
                 continue;
             }
             String wordChecked = checkGuess(letterGuess, wordToShow);
@@ -90,7 +93,7 @@ public class HangmanCities {
     public String prepareWordToShow(String wordGuess) {
         String wordPrepared = "";
         for(char letter: wordGuess.toCharArray()) {
-            wordPrepared += String.valueOf(letter) != " " ? "_\t" : " \t\t";
+            wordPrepared += !String.valueOf(letter).equals(" ") ? "_\t" : " \t";
         }
         return wordPrepared;
     }
