@@ -16,7 +16,7 @@ public class Driver {
         System.out.println("Type \"Y\" to play again or anything to finish");
         String option = scan.nextLine();
         System.out.println();
-        if(option.equalsIgnoreCase("y")) {
+        if (option.equalsIgnoreCase("y")) {
             main(new String[0]);
         }
     }
