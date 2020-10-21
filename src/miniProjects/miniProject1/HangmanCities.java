@@ -7,20 +7,20 @@ import java.util.Scanner;
 
 public class HangmanCities {
     private String[] cities;
-    private String wordGuess;
+    private String sortedWord;
 
     public HangmanCities() {
         this.cities = readCitiesDoc();
-        this.wordGuess = sortingCity(cities);
+        this.sortedWord = sortingCity(cities);
     }
 
-    public void drawGame(String wordGuess, boolean flagFirst, int numError, char[] letterWrong) {
+    private void drawGame(String sortedWord, boolean flagFirst, int numError, char[] letterWrong) {
 
         if (flagFirst) {
             System.out.println("Here's the question.");
-            System.out.println(wordGuess.replace(" ", "-").replace("\t", " ").replace("-", " "));
+            System.out.println(sortedWord.replace(" ", "-").replace("\t", " ").replace("-", " "));
         } else {
-            System.out.println("You are guessing: " + wordGuess.replace(" ", "-").replace("\t", " ").replace("-", " "));
+            System.out.println("You are guessing: " + sortedWord.replace(" ", "-").replace("\t", " ").replace("-", " "));
             System.out.print("You have guessed (" + numError + ") wrong letters: ");
             for (char letter : letterWrong) System.out.print(letter + "\t");
             System.out.println();
@@ -34,7 +34,7 @@ public class HangmanCities {
         boolean flagGuess = false;
         boolean first = true;
         String lettersWrong = "";
-        String wordToShow = prepareWordToShow(this.wordGuess);
+        String wordToShow = prepareWordToShow(this.sortedWord);
         while (countError < 10 && !flagGuess) {
             drawGame(wordToShow, first, countError, lettersWrong.toCharArray());
             System.out.print("Guess a letter: ");
@@ -52,7 +52,7 @@ public class HangmanCities {
                 lettersWrong += letterGuess;
             } else if (validateGuess(wordChecked)) {
                 System.out.println("You win!");
-                System.out.println("You have guessed '" + this.wordGuess + "' correctly.");
+                System.out.println("You have guessed '" + this.sortedWord + "' correctly.");
                 flagGuess = true;
                 continue;
             } else {
@@ -65,12 +65,12 @@ public class HangmanCities {
             for (char letter : lettersWrong.toCharArray()) System.out.print(letter + "\t");
             System.out.println();
             System.out.println("You lose!");
-            System.out.println("The correct word was '" + this.wordGuess + "' !");
+            System.out.println("The correct word was '" + this.sortedWord + "' !");
         }
         System.out.println();
     }
 
-    public String[] readCitiesDoc() {
+    private String[] readCitiesDoc() {
         File file = new File("src\\miniProjects\\miniProject1\\cities.txt");
         try {
             Scanner fileScan = new Scanner(file);
@@ -84,13 +84,13 @@ public class HangmanCities {
         }
     }
 
-    public String sortingCity(String[] cities) {
+    private String sortingCity(String[] cities) {
         Random random = new Random();
         int indexSorted = random.nextInt(cities.length);
         return cities[indexSorted];
     }
 
-    public String prepareWordToShow(String wordGuess) {
+    private String prepareWordToShow(String wordGuess) {
         String wordPrepared = "";
         for (char letter : wordGuess.toCharArray()) {
             wordPrepared += !String.valueOf(letter).equals(" ") ? "_\t" : " \t";
@@ -98,8 +98,8 @@ public class HangmanCities {
         return wordPrepared;
     }
 
-    public String checkGuess(String letterGuess, String wordToShow) {
-        char[] arrayWord = this.wordGuess.toCharArray();
+    private String checkGuess(String letterGuess, String wordToShow) {
+        char[] arrayWord = this.sortedWord.toCharArray();
         String[] arrayWordToShow = wordToShow.split("\t");
         for (int i = 0; i < arrayWord.length; i++) {
             if (letterGuess.equalsIgnoreCase(String.valueOf(arrayWord[i]))) {
@@ -112,9 +112,9 @@ public class HangmanCities {
         return wordToShow;
     }
 
-    public boolean validateGuess(String wordGuess) {
+    private boolean validateGuess(String wordGuess) {
         String wordFormated = wordGuess.replace("\t", "");
 
-        return wordFormated.equals(this.wordGuess) ? true : false;
+        return wordFormated.equals(this.sortedWord) ? true : false;
     }
 }

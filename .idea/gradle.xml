@@ -5,10 +5,28 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../Assignment1-Java" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../Assignment1-Java" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../assignment2-java" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/../assignment2-java" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../assignment3-java" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../assignment3-java" />
           </set>
         </option>
       </GradleProjectSettings>
