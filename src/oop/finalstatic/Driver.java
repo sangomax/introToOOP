@@ -23,7 +23,7 @@ public class Driver {
 
         try {
             Time t1 = new Time(17, 29, 9);
-            Time t2 = new Time(25, 2, 19);
+            Time t2 = new Time(15, 2, 19);
             Time t3 = new Time(20, 21, 29);
             Time t4 = new Time(5, 0, 39);
             Time t5 = new Time(21, 39, 49);
