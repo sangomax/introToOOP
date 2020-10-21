@@ -1,4 +1,4 @@
-package lab1;
+package teacherCorrections.lab1;
 
 public class Driver {
     public static void main(String[] args) {

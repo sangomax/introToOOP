@@ -1,4 +1,4 @@
-package lab2;
+package teacherCorrections.lab2;
 
 public class Province {
 

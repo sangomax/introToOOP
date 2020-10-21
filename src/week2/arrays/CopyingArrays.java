@@ -22,7 +22,7 @@ public class CopyingArrays {
     }
 
     public static void printNumbers(Integer[] numbers, Object arrayCod) {
-        System.out.print("Array " + arrayCod + ": ");
+        System.out.print("Array" + (arrayCod != "" ? " " + arrayCod : arrayCod) + ": ");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }

@@ -1,4 +1,4 @@
-package lab1;
+package teacherCorrections.lab1;
 
 /**
  * @author Derrick Park
