@@ -39,10 +39,11 @@ public class HangmanCities {
             drawGame(wordToShow, first, countError, lettersWrong.toCharArray());
             System.out.print("Guess a letter: ");
             String letterGuess = scan.nextLine();
-            if (!letterGuess.matches("^[a-zA-Z]")) {
+            if (!letterGuess.matches("^[a-zA-ZçÇ]")) {
                 System.out.println("Invalid character!");
                 continue;
-            } else if (wordToShow.contains(letterGuess) || lettersWrong.contains(letterGuess)) {
+            } else if (wordToShow.contains(letterGuess.toLowerCase()) || wordToShow.contains(letterGuess.toUpperCase())
+                    || lettersWrong.contains(letterGuess.toLowerCase()) || lettersWrong.contains(letterGuess.toUpperCase())) {
                 System.out.println("The letter has already been typed, try another");
                 continue;
             }

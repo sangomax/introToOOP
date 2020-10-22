@@ -42,6 +42,13 @@ public class ExercisesPersonal {
 
         Scanner in = new Scanner(System.in);
 
+        Object t = 9, s = "teste", r = true, v = 3.56;
+
+        System.out.println(t.getClass());
+        System.out.println(s.getClass());
+        System.out.println(r.getClass());
+        System.out.println(v.getClass());
+
         System.out.println("Enter the language code: ");
         String countryCody = in.nextLine();
         switch (countryCody) {
