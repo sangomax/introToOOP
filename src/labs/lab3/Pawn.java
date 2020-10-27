@@ -1,6 +1,6 @@
 package labs.lab3;
 
-public class Pawn extends Piece{
+public class Pawn extends Piece {
 
     private boolean promoted;
 
@@ -10,12 +10,15 @@ public class Pawn extends Piece{
         super(value, isWhite);
         if (promoted) {
             promote(newPiece);
+        } else {
+            this.promoted = promoted;
+            this.newPiece = null;
         }
     }
 
     @Override
     public void move() {
-        if (promoted) {
+        if (this.promoted) {
             getNewPiece().move();
         } else {
             System.out.println("Forward 1");
@@ -28,8 +31,14 @@ public class Pawn extends Piece{
         return this.getValue() == pawn.getValue() &&
                 this.isWhite() == pawn.isWhite() &&
                 this.isPromoted() == pawn.isPromoted() &&
-                (this.isPromoted() == false ||
-                        this.getNewPiece().equals(pawn.newPiece));
+                (
+                        (this.isPromoted() == false &&
+                                (this.getNewPiece() == null && pawn.newPiece == null)
+                        ) || (this.isPromoted() == true &&
+                                (this.getNewPiece() != null && pawn.newPiece != null) &&
+                                (this.getNewPiece().equals(pawn.newPiece))
+                        )
+                );
     }
 
     @Override
@@ -38,7 +47,7 @@ public class Pawn extends Piece{
     }
 
     public void promote(Piece newPiece) {
-        if (newPiece.getValue() != 1000 && newPiece.getValue() != 1) {
+        if (newPiece != null && newPiece.getValue() != 1000 && newPiece.getValue() != 1) {
             setPromoted(true);
             setNewPiece(newPiece);
         }
