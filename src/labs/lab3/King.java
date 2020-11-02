@@ -1,9 +1,11 @@
 package labs.lab3;
 
+import static labs.lab3.Controller.KING_VALUE;
+
 public class King extends Piece{
 
-    public King(int value, boolean isWhite) {
-        super(value, isWhite);
+    public King(boolean isWhite) {
+        super(KING_VALUE, isWhite);
     }
 
     @Override

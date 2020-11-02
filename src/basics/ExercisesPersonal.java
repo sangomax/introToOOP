@@ -49,6 +49,9 @@ public class ExercisesPersonal {
         System.out.println(r.getClass());
         System.out.println(v.getClass());
 
+        System.out.println("♔");
+        System.out.println("♚");
+
         System.out.println("Enter the language code: ");
         String countryCody = in.nextLine();
         switch (countryCody) {

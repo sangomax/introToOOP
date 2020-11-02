@@ -30,9 +30,12 @@ public abstract class Piece {
     public abstract void move();
 
     @Override
-    public boolean equals(Object obj) {
-        Piece pawn = (Piece) obj;
-        return this.getValue() == pawn.getValue() && this.isWhite() == pawn.isWhite();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Piece piece = (Piece) o;
+        return value == piece.value &&
+                isWhite == piece.isWhite;
     }
 
     @Override

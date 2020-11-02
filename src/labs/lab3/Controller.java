@@ -17,7 +17,7 @@ public class Controller {
         ArrayList<Piece> pieces = new ArrayList<>();
         boolean[] colors = {WHITE_PIECE, BLACK_PIECE};
         for (boolean color : colors) {
-            pieces.add(new King(KING_VALUE, color));
+            pieces.add(new King(color));
             pieces.add(new Queen(QUEEN_VALUE, color));
             pieces.add(new Bishop(BISHOP_VALUE, color));
             pieces.add(new Bishop(BISHOP_VALUE, color));
