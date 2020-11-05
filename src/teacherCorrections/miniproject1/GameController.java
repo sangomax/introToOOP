@@ -20,7 +20,7 @@ public class GameController {
      * Instance variables for the {@code GameController}.
      */
     private int guesses;
-    private miniproject1.Question[] questions;
+    private teacherCorrections.miniproject1.Question[] questions;
     private String wrongLetters;
     private boolean isCorrect;
 
@@ -31,7 +31,7 @@ public class GameController {
      */
     public GameController(String filename) {
         this.guesses = NUM_GUESSES;
-        this.questions = new miniproject1.Question[NUM_QUESTIONS];
+        this.questions = new teacherCorrections.miniproject1.Question[NUM_QUESTIONS];
         loadQuestions(filename);
         this.wrongLetters = "";
         this.isCorrect = false;
@@ -47,7 +47,7 @@ public class GameController {
             int i = 0;
             while (in.hasNextLine()) {
                 String line = in.nextLine();
-                questions[i++] = new miniproject1.Question(line);
+                questions[i++] = new teacherCorrections.miniproject1.Question(line);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
@@ -55,7 +55,7 @@ public class GameController {
     }
 
     // Get random question from the questions array.
-    private miniproject1.Question getRandomQuestion() {
+    private teacherCorrections.miniproject1.Question getRandomQuestion() {
         int index = (int) (Math.random() * 1);
         return questions[index];
     }
@@ -67,7 +67,7 @@ public class GameController {
      * interact with user to finish the game.
      */
     public void playGame() throws IllegalArgumentException {
-        miniproject1.Question question = getRandomQuestion();
+        teacherCorrections.miniproject1.Question question = getRandomQuestion();
         System.out.println("Here's the question.");
         System.out.println(question.getHint());
         Scanner in = new Scanner(System.in);
