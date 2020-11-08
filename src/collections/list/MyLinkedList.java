@@ -38,11 +38,15 @@ public class MyLinkedList<E> {
         size++;
     }
 
+    public void isValidIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new ArrayIndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+    }
+
     // O(N)
     public void add(int index, E e) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
-        }
+        isValidIndex(index);
         if (index == 0) {
             addFirst(e);
         } else if (index == size) {
@@ -171,6 +175,7 @@ public class MyLinkedList<E> {
      */
     public boolean remove(int index) {
         // TODO: Implement Me
+        isValidIndex(index);
         if (head == null) {
             throw new NoSuchElementException("list is empty");
         }
